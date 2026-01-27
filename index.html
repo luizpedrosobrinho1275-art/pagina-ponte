@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verificação de idade</title>
+  <title>Verificação</title>
   <style>
     * {
       margin: 0;
@@ -12,123 +12,111 @@
     }
 
     body {
-      background: #0a0a0a;
+      background: #000000;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      padding: 24px;
     }
 
     .container {
       text-align: center;
-      max-width: 400px;
       width: 100%;
+      max-width: 360px;
     }
 
     .logo {
       width: 80px;
       height: 80px;
-      margin: 0 auto 32px;
-    }
-
-    .logo svg {
-      width: 100%;
-      height: 100%;
+      margin: 0 auto 40px;
+      display: block;
     }
 
     h1 {
-      color: #e8e8e8;
-      font-size: 22px;
+      color: #FFFFFF;
+      font-size: 24px;
       font-weight: 400;
-      margin-bottom: 28px;
+      margin-bottom: 40px;
       line-height: 1.4;
     }
 
     .buttons {
       display: flex;
-      gap: 12px;
-      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
     }
 
     .btn {
-      padding: 14px 40px;
-      font-size: 16px;
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 18px;
       font-weight: 600;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s ease;
+      display: block;
+      text-align: center;
+      transition: opacity 0.2s ease;
     }
 
     .btn-yes {
-      background: #ffffff;
-      color: #0a0a0a;
+      background: #FFFFFF;
+      color: #000000;
     }
 
-    .btn-yes:hover {
-      background: #f0f0f0;
-      transform: translateY(-1px);
+    .btn-yes:active {
+      opacity: 0.85;
     }
 
     .btn-no {
-      background: #2a2a2a;
-      color: #888;
+      background: #1a1a1a;
+      color: #666666;
+      cursor: default;
     }
 
-    .btn-no:hover {
-      background: #333;
-    }
-
-    @media (max-width: 480px) {
+    @media (min-width: 768px) {
       .logo {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 28px;
+        width: 90px;
+        height: 90px;
+        margin-bottom: 48px;
       }
 
       h1 {
-        font-size: 20px;
-        margin-bottom: 24px;
-      }
-
-      .buttons {
-        flex-direction: column;
-        gap: 10px;
+        font-size: 26px;
+        margin-bottom: 48px;
       }
 
       .btn {
-        width: 100%;
-        padding: 13px 32px;
+        padding: 18px 32px;
+        font-size: 19px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="logo">
-      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="telegram-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-            <stop offset="0%" style="stop-color:#2AABEE"/>
-            <stop offset="100%" style="stop-color:#229ED9"/>
-          </linearGradient>
-        </defs>
-        <circle cx="120" cy="120" r="120" fill="url(#telegram-gradient)"/>
-        <path fill="#fff" d="M81.229 128.772l14.237 39.406s1.78 3.687 3.686 3.687 30.255-29.492 30.255-29.492l31.525-60.89L81.737 118.6z"/>
-        <path fill="#d2e5f1" d="M100.106 138.878l-2.733 29.046s-1.144 8.9 7.754 0 17.415-15.763 17.415-15.763"/>
-        <path fill="#b5cfe4" d="M81.486 130.178l-17.8-5.467s-2.006-.8-.135-2.629c.174-.171.359-.353.6-.553 3.004-2.479 55.795-21.245 55.795-21.245s2.229-.789 3.565-.359a1.75 1.75 0 0 1 1.003.991c.184.565.29 1.186.29 1.886.054.9.126 1.955.165 3.117.338 9.66 1.368 40.623 1.368 40.623s.063 2.025-.7 2.86c-.918 1.002-2.425 1.278-3.45.842-.9-.384-28.446-11.415-38.4-15.395-.699-.278-1.293-.61-1.653-.913-.377-.316-.633-.63-.633-1.002 0-.316.11-.66.385-1.076 2.19-3.342 17.546-15.828 35.949-32.155.729-.643.48-1.072.079-1.072-.486 0-1.053.258-1.844.71-9.689 5.54-39.134 24.582-43.891 27.533z"/>
-      </svg>
-    </div>
+    <svg class="logo" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tg" x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" style="stop-color:#2AABEE"/>
+          <stop offset="100%" style="stop-color:#229ED9"/>
+        </linearGradient>
+      </defs>
+      <circle cx="120" cy="120" r="120" fill="url(#tg)"/>
+      <path fill="#fff" d="M81.229 128.772l14.237 39.406s1.78 3.687 3.686 3.687 30.255-29.492 30.255-29.492l31.525-60.89L81.737 118.6z"/>
+      <path fill="#d2e5f1" d="M100.106 138.878l-2.733 29.046s-1.144 8.9 7.754 0 17.415-15.763 17.415-15.763"/>
+      <path fill="#b5cfe4" d="M81.486 130.178l-17.8-5.467s-2.006-.8-.135-2.629c.174-.171.359-.353.6-.553 3.004-2.479 55.795-21.245 55.795-21.245s2.229-.789 3.565-.359a1.75 1.75 0 0 1 1.003.991c.184.565.29 1.186.29 1.886.054.9.126 1.955.165 3.117.338 9.66 1.368 40.623 1.368 40.623s.063 2.025-.7 2.86c-.918 1.002-2.425 1.278-3.45.842-.9-.384-28.446-11.415-38.4-15.395-.699-.278-1.293-.61-1.653-.913-.377-.316-.633-.63-.633-1.002 0-.316.11-.66.385-1.076 2.19-3.342 17.546-15.828 35.949-32.155.729-.643.48-1.072.079-1.072-.486 0-1.053.258-1.844.71-9.689 5.54-39.134 24.582-43.891 27.533z"/>
+    </svg>
 
     <h1>Você já completou 18 anos?</h1>
 
     <div class="buttons">
-      <a href="https://t.me/Pamelavesbot" class="btn btn-yes">Sim</a>
-      <button class="btn btn-no" onclick="location.reload()">Não</button>
+      <a href="https://t.me/PAMpagamentosbot" class="btn btn-yes">Sim</a>
+      <button class="btn btn-no" type="button">Não</button>
     </div>
   </div>
 </body>
